@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Cache
+.cache/
+.parcel-cache/
+.vite-cache/
+
+# Testing
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.eslintcache

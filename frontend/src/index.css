@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+  
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  /* Button Components */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-sm;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-primary-500;
+  }
+  
+  .btn-ghost {
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:ring-gray-500;
+  }
+  
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+  
+  /* Input Components */
+  .input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+  
+  .input-error {
+    @apply border-error-500 focus:ring-error-500 focus:border-error-500;
+  }
+  
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-xl shadow-soft border border-gray-100;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+  
+  /* Loading Components */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::before {
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent content-[''];
+  }
+  
+  /* Text Components */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+  
+  /* Layout Components */
+  .container-app {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
+  /* Animation Classes */
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .slide-up {
+    @apply animate-slide-up;
+  }
+  
+  .scale-in {
+    @apply animate-scale-in;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+  
+  /* Focus visible */
+  .focus-visible {
+    @apply focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600;
+  }
+  
+  /* Backdrop blur */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* React Image Gallery Overrides */
+.image-gallery {
+  @apply rounded-lg overflow-hidden;
+}
+
+.image-gallery-slide img {
+  @apply rounded-lg;
+}
+
+.image-gallery-thumbnails-wrapper {
+  @apply mt-4;
+}
+
+.image-gallery-thumbnail {
+  @apply rounded-md overflow-hidden border-2 border-transparent;
+}
+
+.image-gallery-thumbnail.active {
+  @apply border-primary-500;
+}
+
+/* React Select Overrides */
+.react-select-container {
+  @apply text-sm;
+}
+
+.react-select__control {
+  @apply border-gray-300 shadow-sm hover:border-gray-400 focus-within:border-primary-500 focus-within:ring-1 focus-within:ring-primary-500;
+}
+
+.react-select__menu {
+  @apply shadow-lg border border-gray-200;
+}
+
+.react-select__option--is-focused {
+  @apply bg-primary-50 text-primary-900;
+}
+
+.react-select__option--is-selected {
+  @apply bg-primary-600;
+}
+
+/* Custom animations for specific components */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+/* Loading spinner */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #f79009 0%, #dc6803 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Text selection */
+::selection {
+  @apply bg-primary-200 text-primary-900;
+}
+
+::-moz-selection {
+  @apply bg-primary-200 text-primary-900;
+}
