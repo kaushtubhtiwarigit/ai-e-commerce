@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 
 // Create axios instance with default configuration
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
   withCredentials: true,
   timeout: 10000,
 })
@@ -27,8 +27,10 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('token')
-      window.location.href = '/login'
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('token')
+        window.location.href = '/login'
+      }
       toast.error('Session expired. Please login again.')
     } else if (error.response?.status >= 500) {
       toast.error('Server error. Please try again later.')

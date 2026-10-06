@@ -255,7 +255,7 @@ export function CartProvider({ children }) {
       } else {
         // Add to local cart
         const existingItemIndex = state.items.findIndex(
-          item => item.product._id === product._id
+          item => item.product?._id === product._id || item._id === product._id
         )
 
         let updatedItems
@@ -266,9 +266,9 @@ export function CartProvider({ children }) {
           updatedItems = [
             ...state.items,
             {
-              product,
+              ...product,
               quantity,
-              price: product.price.current,
+              price: product.price || 0,
               addedAt: new Date()
             }
           ]

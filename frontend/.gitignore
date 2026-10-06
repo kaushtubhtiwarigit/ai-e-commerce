@@ -1,37 +1,36 @@
-# Dependencies
-node_modules/
-package-lock.json
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Environment variables
-.env
-.env.local
-.env.production
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Build outputs
-dist/
-build/
-.vite/
+# testing
+/coverage
 
-# Logs
-*.log
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 
-# Cache
-.cache/
-.parcel-cache/
-.vite-cache/
+# local env files
+.env*.local
+.env
 
-# Testing
-coverage/
+# vercel
+.vercel
 
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Misc
-.eslintcache
+# typescript
+*.tsbuildinfo
+next-env.d.ts
