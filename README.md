@@ -335,7 +335,7 @@ This project is licensed under the MIT License.
 
 ## 👥 Authors
 
-Your Name / Team Name
+Kaushtubh Tiwari
 
 ## 🙏 Acknowledgments
 
@@ -345,10 +345,6 @@ Your Name / Team Name
 - Next.js team for the amazing framework
 - Open source community
 
-## 📞 Support
-
-For support, email your-email@example.com or open an issue in the repository.
-
 ---
 
-**Built with ❤️ using Next.js, Express, and AI**
+**Built with ❤️ using Next.js, MERN stack and GenAI frameworks**
